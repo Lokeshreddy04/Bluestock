@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>{{ company.company_name }}</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <div class="card shadow p-4 mb-5">
+
+        <h1>{{ company.company_name }}</h1>
+
+        <hr>
+
+        <h4>Symbol: {{ company.symbol }}</h4>
+
+        <h4>
+            Health Score:
+            {{ company.health_score }}
+        </h4>
+
+        <h4>
+            Health Label:
+            {{ company.health_label }}
+        </h4>
+
+    </div>
+
+    <!-- SALES CHART -->
+
+    <div class="card shadow p-4 mb-5">
+
+        <h2 class="mb-4">
+            Sales Trend
+        </h2>
+
+        <canvas id="salesChart"></canvas>
+
+    </div>
+
+    <!-- PROFIT CHART -->
+
+    <div class="card shadow p-4 mb-5">
+
+        <h2 class="mb-4">
+            Profit Trend
+        </h2>
+
+        <canvas id="profitChart"></canvas>
+
+    </div>
+
+</div>
+
+<div class="row mb-5">
+
+    <div class="col-md-4">
+
+        <div class="card shadow p-4">
+
+            <h5>Health Score</h5>
+
+            <h2>
+                {{ company.health_score }}
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card shadow p-4">
+
+            <h5>Health Label</h5>
+
+            <h2>
+                {{ company.health_label }}
+            </h2>
+
+        </div>
+
+    </div>
+
+</div>    
+
+<script>
+
+const years = {{ years|safe }};
+
+const salesData = {{ sales|safe }};
+
+const profitData = {{ profits|safe }};
+
+
+new Chart(
+    document.getElementById('salesChart'),
+    {
+        type: 'line',
+
+        data: {
+
+            labels: years,
+
+            datasets: [{
+                label: 'Sales Trend',
+                data: salesData,
+                borderWidth: 3,
+                tension: 0.4,
+                fill: true
+            }]
+        },
+
+        options: {
+
+            responsive: true,
+
+            plugins: {
+                legend: {
+                    display: true
+                }
+            },
+
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    }
+);
+
+new Chart(
+    document.getElementById('profitChart'),
+    {
+        type: 'bar',
+
+        data: {
+
+            labels: years,
+
+            datasets: [{
+                label: 'Net Profit',
+                data: profitData,
+                borderWidth: 2
+            }]
+        },
+
+        options: {
+
+            responsive: true,
+
+            plugins: {
+                legend: {
+                    display: true
+                }
+            },
+
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    }
+);
+</script>
+
+</body>
+
+</html>
