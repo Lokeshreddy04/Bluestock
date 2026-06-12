@@ -2,58 +2,78 @@
 
 ## Overview
 
-An end-to-end financial analytics platform built using Python, PostgreSQL, Power BI, Machine Learning, and Django REST Framework.
+Bluestock Financial Analytics Platform is an end-to-end financial analytics application built using Python, PostgreSQL, Django REST Framework, React, and Power BI.
 
-The project analyzes financial statements of publicly listed companies, generates financial health scores, performs anomaly detection and clustering, and exposes insights through REST APIs and interactive dashboards.
+The platform analyzes financial data of Indian listed companies, generates financial health scores, identifies similar companies using machine learning, forecasts future revenue, and provides interactive dashboards through a modern web application.
 
 ---
 
 ## Features
 
-### Data Engineering
+### Financial Analytics
 
-* Data cleaning and preprocessing using Pandas
-* ETL pipeline for financial statement data
-* PostgreSQL data warehouse
-* Star schema design
-
-### Business Intelligence
-
-* Executive Overview Dashboard
-* Company Deep Dive Dashboard
-* Sector Analytics Dashboard
-* Risk & Leverage Analysis
-* Growth & Profitability Dashboard
-* Cash Flow & Operational Efficiency Dashboard
-* Investment Decision Dashboard
+* Profit & Loss Analysis
+* Balance Sheet Analysis
+* Cash Flow Analysis
+* KPI Dashboard
 
 ### Machine Learning
 
 * Financial Health Scoring
-* Outlier Detection
-* Isolation Forest Anomaly Detection
-* K-Means Clustering
-* Peer Similarity Engine
+* Company Similarity Analysis
 * Revenue Forecasting
+* Outlier Detection
 
-### Backend APIs
+### Backend
 
-Built using Django REST Framework.
+* Django REST Framework APIs
+* Swagger/OpenAPI Documentation
+* PostgreSQL Data Warehouse
+* Unified Dashboard Endpoint
 
-#### Available Endpoints
+### Frontend
 
-* `/api/v1/companies/`
-* `/api/v1/companies/<symbol>/`
-* `/api/v1/profit-loss/<symbol>/`
-* `/api/v1/balance-sheet/<symbol>/`
-* `/api/v1/cash-flow/<symbol>/`
-* `/api/v1/health-score/<symbol>/`
-* `/api/v1/company-dashboard/<symbol>/`
+* Company Search with Autocomplete
+* Interactive Company Dashboard
+* Sector Analytics Dashboard
+* Revenue Trend Visualization
+* Similar Company Recommendations
 
-#### API Documentation
+### Business Intelligence
 
-* `/api/docs/`
-* `/api/schema/`
+* Power BI Dashboard
+* Sector-Level Analysis
+* Risk vs Reward Analysis
+
+---
+
+## Architecture
+
+CSV Files
+
+↓
+
+Pandas ETL Pipeline
+
+↓
+
+PostgreSQL Data Warehouse
+
+↓
+
+Machine Learning Models
+
+↓
+
+Django REST APIs
+
+↓
+
+React Frontend
+
+↓
+
+Power BI Dashboard
 
 ---
 
@@ -64,52 +84,96 @@ Built using Django REST Framework.
 * Python
 * Django
 * Django REST Framework
-
-### Database
-
 * PostgreSQL
 
-### Analytics
+### Frontend
+
+* React
+* Axios
+* React Router
+
+### Machine Learning
 
 * Pandas
 * NumPy
-* Scikit-Learn
-* Statsmodels
+* Scikit-learn
 
 ### Visualization
 
 * Power BI
-
-### Documentation
-
-* Swagger / OpenAPI
+* Recharts
 
 ---
 
-## Project Structure
+## API Endpoints
 
-```text
-backend/
-notebooks/
-powerbi/
-sql/
-requirements.txt
-README.md
-```
+### Companies
+
+* `/api/v1/companies/`
+
+### Financial Statements
+
+* `/api/v1/profit-loss/<symbol>/`
+* `/api/v1/balance-sheet/<symbol>/`
+* `/api/v1/cash-flow/<symbol>/`
+
+### Analytics
+
+* `/api/v1/health-score/<symbol>/`
+* `/api/v1/forecast/<symbol>/`
+* `/api/v1/peers/<symbol>/`
+
+### Dashboard
+
+* `/api/v1/company-dashboard/<symbol>/`
+
+### Sectors
+
+* `/api/v1/sectors/`
+* `/api/v1/sectors/<sector_name>/`
+
+### Documentation
+
+* `/api/docs/`
+
+---
+
+## Screenshots
+
+### Home Page
+
+Insert: `screenshots/home.png`
+
+### Company Dashboard
+
+Insert: `screenshots/dashboard.png`
+
+### Sector Analytics
+
+Insert: `screenshots/sector.png`
+
+### Swagger Documentation
+
+Insert: `screenshots/swagger.png`
+
+### Power BI Dashboard
+
+Insert: `screenshots/powerbi.png`
 
 ---
 
 ## Future Enhancements
 
-* React Frontend
-* JWT Authentication
-* User Watchlists
-* Portfolio Tracking
-* Automated Data Refresh
-* Cloud Deployment
+* Stock Price Integration
+* Real-Time Market Data
+* Advanced Forecasting Models
+* User Authentication
+* Portfolio Analytics
 
 ---
 
 ## Author
 
 Lokesh Reddy
+
+Built as a full-stack financial analytics and machine learning project.
