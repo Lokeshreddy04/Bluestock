@@ -29,13 +29,22 @@ class DimHealthLabel(models.Model):
         db_table = 'dim_health_label'
 
 
-class DimSector(models.Model):
-    sector_name = models.TextField(blank=True, null=True)
-    sector_id = models.BigIntegerField(blank=True, null=True)
+class DimCompany(models.Model):
+    symbol = models.TextField(primary_key=True)
+
+    company_name = models.TextField(
+        blank=True,
+        null=True
+    )
+
+    sector_name = models.TextField(
+        blank=True,
+        null=True
+    )
 
     class Meta:
         managed = False
-        db_table = 'dim_sector'
+        db_table = "dim_company"
 
 
 class DimYear(models.Model):
@@ -152,3 +161,34 @@ class FactProsCons(models.Model):
     class Meta:
         managed = False
         db_table = 'fact_pros_cons'
+
+
+class FactPeers(models.Model):
+    company = models.TextField(primary_key=True)
+
+    peer_1 = models.TextField(blank=True, null=True)
+    peer_2 = models.TextField(blank=True, null=True)
+    peer_3 = models.TextField(blank=True, null=True)
+    peer_4 = models.TextField(blank=True, null=True)
+    peer_5 = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = "fact_peers"
+
+
+
+class FactForecasts(models.Model):
+    symbol = models.CharField(
+        max_length=20,
+        primary_key=True
+    )
+
+    forecast_sales = models.FloatField(
+        blank=True,
+        null=True
+    )
+
+    class Meta:
+        managed = False
+        db_table = "fact_forecasts"

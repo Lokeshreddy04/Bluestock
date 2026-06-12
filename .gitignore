@@ -38,3 +38,12 @@ __pycache__/
 *.pyc
 .env
 .ipynb_checkpoints/
+
+
+__pycache__/
+*.pyc
+venv/
+node_modules/
+dist/
+.env
+desktop.ini

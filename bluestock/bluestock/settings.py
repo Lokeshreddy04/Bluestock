@@ -25,6 +25,8 @@ SECRET_KEY = 'django-insecure-v2^ckm!&7aw+q2)&hcov=)fk#fetus(l-ut2-340%%3lykbe#6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 ALLOWED_HOSTS = []
 
 
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
+
     # Third-party apps
     "rest_framework",
     "drf_spectacular",
@@ -49,6 +52,7 @@ INSTALLED_APPS = [
     "api_management",
     "dashboard",
     "accounts",
+    "corsheaders",
     
 ]
 
@@ -60,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'bluestock.urls'

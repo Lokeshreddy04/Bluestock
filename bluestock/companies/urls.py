@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ProfitLossView
+from .views import CompanySearchView, ForecastView, PeerView, ProfitLossView, SectorDetailView, SectorListView
 from .views import BalanceSheetView
 from .views import CashFlowView
 from .views import HealthScoreView
@@ -43,6 +43,39 @@ path(
     HealthScoreView.as_view(),
     name="health-score"
 ),
+path(
+    "company-dashboard/<str:symbol>/",
+    CompanyDashboardView.as_view(),
+    name="company-dashboard"
+),
+path(
+    "search/",
+    CompanySearchView.as_view(),
+    name="company-search"
+),
+path(
+    "peers/<str:symbol>/",
+    PeerView.as_view(),
+    name="peers"
+),
+path(
+    "forecast/<str:symbol>/",
+    ForecastView.as_view(),
+    name="forecast"
+),
+
+path(
+    "sectors/",
+    SectorListView.as_view(),
+    name="sector-list"
+),
+
+path(
+    "sectors/<str:sector_name>/",
+    SectorDetailView.as_view(),
+    name="sector-detail"
+),
+
 path(
     "company-dashboard/<str:symbol>/",
     CompanyDashboardView.as_view(),
