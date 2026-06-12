@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 
 import api from "../api/api";
 
-import RevenueChart from "../components/RevenueChart";
-import PeerCompanies from "../components/PeerCompanies";
-import ForecastCard from "../components/ForecastCard";
+import RevenueChart from "../Components/RevenueChart";
+import PeerCompanies from "../Components/PeerCompanies";
+import ForecastCard from "../Components/ForecastCard";
 import "../styles/dashboard.css";
 
 

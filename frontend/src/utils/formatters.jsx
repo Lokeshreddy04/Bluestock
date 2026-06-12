@@ -1,4 +1,4 @@
-import { formatNumber } from "../utils/formatters";
+import { formatNumber } from "./formatters";
 
 export const formatNumber = (
   value

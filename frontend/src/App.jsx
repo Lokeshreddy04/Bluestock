@@ -4,10 +4,10 @@ import {
   Route,
 } from "react-router-dom";
 
-import Home from "./pages/Home";
-import CompanyDashboard from "./pages/CompanyDashboard";
+import Home from "./Pages/Home";
+import CompanyDashboard from "./Pages/CompanyDashboard";
 import SectorDashboard
-from "./pages/SectorDashboard";
+from "./Pages/SectorDashboard";
 
 function App() {
 

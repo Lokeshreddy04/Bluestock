@@ -1,4 +1,4 @@
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../Components/SearchBar";
 import { Link } from "react-router-dom";
 function Home() {
 
