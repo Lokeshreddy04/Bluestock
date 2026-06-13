@@ -1,14 +1,16 @@
-# Bluestock – AI-Powered Financial Analytics Platform
-
 ## Live Application
 
 ### Frontend (Vercel)
 
-https://bluestock.vercel.app
+https://bluestock-git-main-arra2.vercel.app
 
 ### Backend API (Render)
 
-https://bluestock-6rhm.onrender.com
+https://bluestock-6rhm.onrender.com/api/v1/companies/
+
+### Sample Dashboard API
+
+https://bluestock-6rhm.onrender.com/api/v1/company-dashboard/TCS/
 
 ---
 

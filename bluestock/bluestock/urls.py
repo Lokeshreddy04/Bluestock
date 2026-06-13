@@ -44,3 +44,16 @@ urlpatterns = [
         include("companies.urls")
     ),
 ]
+
+from django.http import JsonResponse
+
+def home(request):
+    return JsonResponse({
+        "project": "Bluestock",
+        "status": "running",
+        "version": "1.0"
+    })
+urlpatterns = [
+    path("", home),
+    ...
+]
