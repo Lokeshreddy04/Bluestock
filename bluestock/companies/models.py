@@ -8,14 +8,6 @@
 from django.db import models
 
 
-class DimCompany(models.Model):
-    symbol = models.TextField(primary_key=True)
-    company_name = models.TextField()
-
-    class Meta:
-        managed = False
-        db_table = "dim_company"
-
 
 class DimHealthLabel(models.Model):
     label_id = models.AutoField(primary_key=True)
@@ -75,33 +67,43 @@ class FactAnalysis(models.Model):
 
 
 class FactBalanceSheet(models.Model):
-    symbol = models.TextField(primary_key=True)
-    year = models.TextField(blank=True, null=True)
-    equity_capital = models.FloatField(blank=True, null=True)
-    reserves = models.BigIntegerField(blank=True, null=True)
-    borrowings = models.BigIntegerField(blank=True, null=True)
-    total_assets = models.BigIntegerField(blank=True, null=True)
-    debt_to_equity = models.FloatField(blank=True, null=True)
+    symbol = models.TextField(
+        primary_key=True
+    )
+
+    year = models.TextField(
+        blank=True,
+        null=True
+    )
+
+    equity_capital = models.FloatField(
+        blank=True,
+        null=True
+    )
+
+    reserves = models.BigIntegerField(
+        blank=True,
+        null=True
+    )
+
+    borrowings = models.BigIntegerField(
+        blank=True,
+        null=True
+    )
+
+    total_assets = models.BigIntegerField(
+        blank=True,
+        null=True
+    )
+
+    debt_to_equity = models.FloatField(
+        blank=True,
+        null=True
+    )
 
     class Meta:
         managed = False
-        db_table = 'fact_balance_sheet'
-
-
-class FactBalanceSheets(models.Model):
-    pk = models.CompositePrimaryKey('symbol', 'year')
-    symbol = models.CharField(max_length=20)
-    year = models.TextField()
-    equity_capital = models.FloatField(blank=True, null=True)
-    reserves = models.FloatField(blank=True, null=True)
-    borrowings = models.FloatField(blank=True, null=True)
-    total_assets = models.FloatField(blank=True, null=True)
-    debt_to_equity = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'fact_balance_sheets'
-
+        db_table = "fact_balance_sheet"
 
 class FactCashFlow(models.Model):
     symbol = models.TextField(primary_key=True)
